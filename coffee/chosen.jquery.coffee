@@ -302,10 +302,11 @@ class Chosen extends AbstractChosen
       return false # fire event
     choice_id = @container_id + "_c_" + item.array_index
     @choices += 1
+    cls = @css_formatter(item) || ""
     if item.disabled
-      html = '<li class="search-choice search-choice-disabled" id="' + choice_id + '"><span>' + item.html + '</span></li>'
+      html = "<li class='search-choice search-choice-disabled #{cls}' id='#{choice_id}'><span>#{item.html}</span></li>"
     else
-      html = '<li class="search-choice" id="' + choice_id + '"><span>' + item.html + '</span><a href="javascript:void(0)" class="search-choice-close" rel="' + item.array_index + '"></a></li>'
+      html = "<li class='search-choice #{cls}' id='#{choice_id}'><span>#{item.html}</span><a href='javascript:void(0)' class='search-choice-close' rel='#{item.array_index}'>&times;</a></li>"
     @search_container.before  html
     link = $('#' + choice_id).find("a").first()
     link.click (evt) => this.choice_destroy_link_click(evt)

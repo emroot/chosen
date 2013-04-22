@@ -216,17 +216,24 @@
   display: block;
   position: absolute;
   right: 3px;
-  top: 4px;
+  top: 2px;
   width: 12px;
   height: 12px;
-  font-size: 1px;
-  background: url('chosen-sprite.png') -42px 1px no-repeat;
+  font-size: 18px;
+  font-weight:bold;
+  color: #000;
+  opacity: 0.3;
+  -webkit-transition: opacity linear 0.1s;
+  transition: opacity linear 0.1s;
+  text-decoration: none;
 }
 .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
-  background-position: -42px -10px;
+  opacity: 0.5;
+  cursor:pointer;
 }
 .chzn-container-multi .chzn-choices .search-choice-focus .search-choice-close {
-  background-position: -42px -10px;
+  opacity: 0.4;
+  cursor:pointer;
 }
 /* @end */
 

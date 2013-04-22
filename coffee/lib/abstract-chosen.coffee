@@ -37,6 +37,7 @@ class AbstractChosen
     @inherit_select_classes = @options.inherit_select_classes || false
     @create_option = @options.create_option || false
     @persistent_create_option = @options.persistent_create_option || false
+    @css_formatter = @options.css_formatter || ->
 
   set_default_text: ->
     if @form_field.getAttribute("data-placeholder")
